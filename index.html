@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker Pro</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="top-bar">
+
+<div class="logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<h1>Expense Tracker Pro</h1>
+
+</div>
+
+<div class="header-actions">
+
+<button id="themeToggle">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<button id="notificationBtn">
+
+<i class="fa-solid fa-bell"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<main class="dashboard">
+
+<section class="welcome-card">
+
+<h2>Welcome 👋</h2>
+
+<p>Track your income, expenses and savings easily.</p>
+
+</section>
+<!-- Dashboard Cards -->
+
+<section class="cards">
+
+    <div class="card balance">
+        <h3>Total Balance</h3>
+        <h2 id="totalBalance">₹0.00</h2>
+    </div>
+
+    <div class="card income">
+        <h3>Total Income</h3>
+        <h2 id="totalIncome">₹0.00</h2>
+    </div>
+
+    <div class="card expense">
+        <h3>Total Expense</h3>
+        <h2 id="totalExpense">₹0.00</h2>
+    </div>
+
+    <div class="card savings">
+        <h3>Total Savings</h3>
+        <h2 id="totalSavings">₹0.00</h2>
+    </div>
+
+</section>
+
+<!-- Add Transaction -->
+
+<section class="transaction-form">
+
+<h2>Add Transaction</h2>
+
+<form id="transactionForm">
+
+<input
+type="text"
+id="title"
+placeholder="Transaction Title"
+required>
+
+<input
+type="number"
+id="amount"
+placeholder="Amount"
+required>
+
+<select id="type">
+
+<option value="income">Income</option>
+
+<option value="expense">Expense</option>
+
+</select>
+
+<select id="category">
+
+<option>Salary</option>
+<option>Food</option>
+<option>Shopping</option>
+<option>Travel</option>
+<option>Bills</option>
+<option>Health</option>
+<option>Education</option>
+<option>Entertainment</option>
+<option>Other</option>
+
+</select>
+
+<input
+type="date"
+id="date"
+required>
+
+<button type="submit">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Transaction
+
+</button>
+
+</form>
+
+</section>
+<!-- Search & Filters -->
+
+<section class="tools">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search transaction...">
+
+    <select id="filterType">
+        <option value="all">All</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+    </select>
+
+    <select id="filterCategory">
+        <option value="all">All Categories</option>
+        <option value="Salary">Salary</option>
+        <option value="Food">Food</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Travel">Travel</option>
+        <option value="Bills">Bills</option>
+        <option value="Health">Health</option>
+        <option value="Education">Education</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Other">Other</option>
+    </select>
+
+</section>
+
+<!-- Budget -->
+
+<section class="budget-section">
+
+    <h2>Monthly Budget</h2>
+
+    <input
+        type="number"
+        id="budgetInput"
+        placeholder="Enter Monthly Budget">
+
+    <button id="saveBudget">
+        Save Budget
+    </button>
+
+    <h3 id="budgetStatus">
+        Budget: ₹0
+    </h3>
+
+</section>
+
+<!-- Transaction List -->
+
+<section class="transactions">
+
+    <h2>Transactions</h2>
+
+    <div id="transactionList">
+
+    </div>
+
+</section>
+<!-- Charts -->
+
+<section class="charts">
+
+    <div class="chart-card">
+        <h2>Income vs Expense</h2>
+        <canvas id="incomeExpenseChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h2>Category Analysis</h2>
+        <canvas id="categoryChart"></canvas>
+    </div>
+
+</section>
+
+<!-- Recent Activity -->
+
+<section class="recent-section">
+
+    <h2>Recent Activity</h2>
+
+    <div id="recentTransactions">
+
+        <p class="empty">
+            No recent transactions found.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+    <p>
+        Expense Tracker Pro © 2026
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
